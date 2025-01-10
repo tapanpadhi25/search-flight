@@ -56,7 +56,7 @@ class _FlightSearchScreenState extends State<FlightSearchScreen> {
                           child: Text(
                             "Let's start your trip",
                             style: style!.textTheme.titleSmall!.copyWith(
-                              color: Colors.white,fontSize: 15,
+                              color: Colors.white,fontSize: 16,
                               fontWeight: FontWeight.w500,
                             ),
                           ))
