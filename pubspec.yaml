@@ -38,6 +38,7 @@ dependencies:
   google_fonts: ^6.2.1
   toggle_switch: ^2.3.0
   dotted_line: ^3.2.3
+  fluttertoast: ^8.2.10
 
 dev_dependencies:
   flutter_test:

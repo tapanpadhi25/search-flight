@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:search_flight/utility/theme.dart';
 import 'package:search_flight/widgets/custom_app_bar.dart';
 import 'package:toggle_switch/toggle_switch.dart';
@@ -55,8 +56,8 @@ class _FlightSearchScreenState extends State<FlightSearchScreen> {
                           child: Text(
                             "Let's start your trip",
                             style: style!.textTheme.titleSmall!.copyWith(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w600,
+                              color: Colors.white,fontSize: 15,
+                              fontWeight: FontWeight.w500,
                             ),
                           ))
                     ],
@@ -378,21 +379,36 @@ class _FlightSearchScreenState extends State<FlightSearchScreen> {
                             borderRadius: BorderRadius.circular(10),
                           )),
                       onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (_) => FlightDetailsScreen(
-                                      from: fromController.text,
-                                      to: toController.text,
-                                      departure: fromDateController.text,
-                                      arrival: toDateController.text,
-                                      tripType: (initialIndex == 0)
-                                          ? "Round Trip"
-                                          : (initialIndex == 1)
-                                              ? "One Way"
-                                              : 'Multi-city',
-                                  dt: fromDate!,
-                                    )));
+                        if(fromController.text.isEmpty){
+                          Fluttertoast.showToast(msg:"Select From location");
+                          return;
+                        }else if(toController.text.isEmpty){
+                          Fluttertoast.showToast(msg: "Select To location");
+                          return;
+                        }else if(fromDateController.text.isEmpty){
+                          Fluttertoast.showToast(msg: "Select departure date");
+                        }else if(travellerController.text.isEmpty){
+                          Fluttertoast.showToast(msg: "Enter travellers");
+                          return;
+                        }
+                        else{
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (_) => FlightDetailsScreen(
+                                    from: (fromController.text.isNotEmpty)? fromController.text:"",
+                                    to: (toController.text.isNotEmpty)? toController.text:"",
+                                    departure: (fromDateController.text.isNotEmpty)?fromDateController.text:"",
+                                    arrival: (toDateController.text.isNotEmpty)? toDateController.text:"",
+                                    tripType: (initialIndex == 0)
+                                        ? "Round Trip"
+                                        : (initialIndex == 1)
+                                        ? "One Way"
+                                        : 'Multi-city',
+                                    dt: fromDate!,
+                                  )));
+                        }
+
                       },
                       child: Padding(
                         padding: const EdgeInsets.all(8),

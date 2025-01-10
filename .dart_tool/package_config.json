@@ -80,6 +80,18 @@
       "languageVersion": "3.3"
     },
     {
+      "name": "flutter_web_plugins",
+      "rootUri": "file:///D:/Software/flutter_windows_3.13.1-stable/flutter/packages/flutter_web_plugins",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "fluttertoast",
+      "rootUri": "file:///C:/Users/LENOVO/AppData/Local/Pub/Cache/hosted/pub.dev/fluttertoast-8.2.10",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "google_fonts",
       "rootUri": "file:///C:/Users/LENOVO/AppData/Local/Pub/Cache/hosted/pub.dev/google_fonts-6.2.1",
       "packageUri": "lib/",
@@ -278,7 +290,7 @@
       "languageVersion": "3.5"
     }
   ],
-  "generated": "2025-01-09T19:45:16.324168Z",
+  "generated": "2025-01-10T13:55:06.982837Z",
   "generator": "pub",
   "generatorVersion": "3.5.3",
   "flutterRoot": "file:///D:/Software/flutter_windows_3.13.1-stable/flutter",
